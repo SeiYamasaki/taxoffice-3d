@@ -28,9 +28,10 @@
             font-size: 16px;
         }
 
-         .info2 {
+        .info2 {
             position: absolute;
-            top: 60px; /* 2つ目のテキストを少し下に表示 */
+            top: 60px;
+            /* 2つ目のテキストを少し下に表示 */
             left: 50%;
             transform: translateX(-50%);
             background: rgba(0, 0, 0, 0.7);
