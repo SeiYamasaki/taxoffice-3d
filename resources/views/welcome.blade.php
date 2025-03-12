@@ -27,12 +27,26 @@
             border-radius: 5px;
             font-size: 16px;
         }
+
+         .info2 {
+            position: absolute;
+            top: 60px; /* 2つ目のテキストを少し下に表示 */
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
     </style>
 </head>
 
 <body>
 
-    <div class="info">TaxBar® 事務所見学 - 豪華な観葉植物付き</div>
+    <div class="info">TaxBar®入口エントランス</div>
+    <!-- 2つ目の "TaxBar®入口エントランス" -->
+    <div class="info2">黒◯をドアに中央に合わせてクリックして入店してください</div>
 
     <a-scene shadow="type: pcfsoft">
         <!-- 🌟 環境光（全体の明るさをUP） -->
@@ -51,16 +65,17 @@
             receiveShadow="true"></a-box>
 
         <!-- 🚪 ドア（中央に配置） -->
-        <a-box position="0 1 -5" width="1" height="2" depth="0.1" color="brown" castShadow="true"></a-box>
+        <a-box id="door" position="0 1 -5" width="2" height="4" depth="0.1" color="brown"
+            castShadow="true" onclick="window.location.href='https://www.example.com';"></a-box>
 
         <!-- 🚪 ドアノブ（黒い球） -->
-        <a-sphere position="0.4 1 -4.95" radius="0.05" color="black" castShadow="true"></a-sphere>
+        <a-sphere position="0.8 1.5 -4.10" radius="0.05" color="black" castShadow="true"></a-sphere>
 
         <!-- 🏷 TaxBar® のロゴ画像 -->
         <a-image src="/images/logotoumei.png" position="-3.5 1.6 -4.9" width="3" height="3"></a-image>
 
         <!-- 📚 本棚 -->
-        <a-box position="2 1.5 -4" width="1.5" height="2.5" depth="0.5" color="saddlebrown"
+        <a-box position="2 1.5 -3" width="1.5" height="2.5" depth="0.5" color="saddlebrown"
             receiveShadow="true"></a-box>
 
         <!-- 🪑 応接ソファー -->
@@ -68,25 +83,6 @@
             castShadow="true"></a-box>
         <a-box position="2.5 0.6 -1.5" width="2" height="1.2" depth="1" color="darkgray"
             castShadow="true"></a-box>
-
-        <!-- 🏢 応接テーブル（待合エリアに追加） -->
-        <a-box position="0 0.4 -1.5" width="2" height="0.8" depth="1" color="brown"
-            castShadow="true"></a-box>
-
-        <!-- ☕ コーヒーカップ（応接テーブル上） -->
-        <a-cylinder position="0 0.9 -1.5" radius="0.2" height="0.3" color="white" castShadow="true"></a-cylinder>
-
-        <!-- 🌿 豪華な観葉植物（GLBモデルを修正） -->
-        <a-entity
-            gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models/2.0/SheenChair/glTF-Binary/SheenChair.glb"
-            position="0 0 2" scale="1.5 1.5 1.5" rotation="0 180 0">
-        </a-entity>
-
-        <!-- 🌿 サブ観葉植物（左右にも配置） -->
-        <a-entity
-            gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models/2.0/SheenChair/glTF-Binary/SheenChair.glb"
-            position="-3 0 -2" scale="1.2 1.2 1.2" rotation="0 90 0">
-        </a-entity>
 
         <a-entity
             gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models/2.0/SheenChair/glTF-Binary/SheenChair.glb"
@@ -99,7 +95,6 @@
                 <a-cursor></a-cursor>
             </a-camera>
         </a-entity>
-
 
     </a-scene>
 
